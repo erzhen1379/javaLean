@@ -9,7 +9,8 @@ import java.util.Map;
 public class JvmErrorTest {
     public static void main(String[] args) {
         System.out.println("测试jvm异常");
-        HeapOOMTest();
+        //HeapOOMTest();
+        HashMapLeakTest();
     }
 
     /**
@@ -52,15 +53,27 @@ public class JvmErrorTest {
     }
 
     /**
-     *
+     *忘记了重写对象的hashCode和equals方法，就会产生内存泄漏。
      */
-    private static void HashMapLeakTest(){
-        Map<Object, Object> objectObjectHashMap = new HashMap<>();
+    private static void HashMapLeakTest() {
+
+        Map<Key, Integer> map = new HashMap<>();
+
+        map.put(new Key("1"), 1);
+        map.put(new Key("2"), 2);
+        map.put(new Key("3"), 3);
+        Integer integer = map.get(new Key("2"));
+        System.out.println(integer);
     }
     public static class Key {
         String title;
+
         public Key(String title) {
             this.title = title;
         }
     }
+
+
+
+
 }
