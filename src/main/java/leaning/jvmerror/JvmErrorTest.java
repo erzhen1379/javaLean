@@ -58,7 +58,7 @@ public class JvmErrorTest {
     private static void HashMapLeakTest() {
 
         Map<Key, Integer> map = new HashMap<>();
-
+         //上海
         map.put(new Key("1"), 1);
         map.put(new Key("2"), 2);
         map.put(new Key("3"), 3);
