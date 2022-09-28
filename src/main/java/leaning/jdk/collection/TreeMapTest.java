@@ -8,7 +8,6 @@ public class TreeMapTest {
         System.out.println("测试tree map ");
         //TreeMap  是Java集合中的 红黑树结构  其本质上是一个有序表  对传入的数据根据key的值进行排序
         //也正因为它是一种有序的结构  所以我们可以进行相关操作
-
         TreeMap<Integer, String> treeMap = new TreeMap<>();
         treeMap.put(7, "我是7");  //哈希表的创建
         treeMap.put(6, "我是6");

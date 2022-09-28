@@ -39,5 +39,37 @@ public class HashMapTest {
             System.out.println("key=" + key + " value=" + value);
         });
 
+        System.out.println("----------------测试hashmap线程安全--------------------");
+        HashMap<String, String> map = new HashMap<>();
+        Thread t1 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 0; i <= 200; i++) {
+                    map.put(i + "", i + "");
+                }
+            }
+        });
+        Thread t2 = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                for (int i = 11; i <= 200; i++) {
+                    map.put(i + "", i + 1 + "");
+                }
+            }
+        });
+        t1.start();
+        t2.start();
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        map.forEach((key, value) -> {
+            System.out.println("key=" + key + " value=" + value);
+        });
     }
+
 }
+
+
