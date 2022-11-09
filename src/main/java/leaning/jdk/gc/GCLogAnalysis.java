@@ -5,9 +5,7 @@ import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.LongAdder;
 
 
-/**
- * https://liuchenyang0515.blog.csdn.net/article/details/121974216?spm=1001.2101.3001.6650.5&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-121974216-blog-114204169.pc_relevant_3mothn_strategy_and_data_recovery&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EBlogCommendFromBaidu%7ERate-5-121974216-blog-114204169.pc_relevant_3mothn_strategy_and_data_recovery&utm_relevant_index=6
- */
+
 
 public class GCLogAnalysis {
     private static Random random = new Random();
@@ -17,7 +15,7 @@ public class GCLogAnalysis {
         long startMillis = System.currentTimeMillis();
         // 持续运行毫秒数; 可根据需要进行修改
         //
-        long timeoutMillis = TimeUnit.SECONDS.toMillis(1);
+        long timeoutMillis = TimeUnit.SECONDS.toMillis(10000);
         // 结束时间戳
         long endMillis = startMillis + timeoutMillis;
         LongAdder counter = new LongAdder();
