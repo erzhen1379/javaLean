@@ -13,7 +13,7 @@ public class GCLogAnalysis {
     public static void main(String[] args) {
         // 当前毫秒时间戳
         long startMillis = System.currentTimeMillis();
-        // 持续运行毫秒数; 可根据需要进行修改
+        // 持续运行毫秒数; 可根据需要进行修改1
         //
         long timeoutMillis = TimeUnit.SECONDS.toMillis(10000);
         // 结束时间戳
