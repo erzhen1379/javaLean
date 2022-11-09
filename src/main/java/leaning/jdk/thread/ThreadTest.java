@@ -25,7 +25,7 @@ public class ThreadTest extends Thread {
         thread1.start();
         thread2.start();
         Thread.sleep(1000);
-        System.out.println("---------测试线程join方法------------");
+        System.out.println("---------测试线程join方法1------------");
         ThreadTest thread3 = new ThreadTest();
         System.out.println(thread3.getState());
         thread3.start();
