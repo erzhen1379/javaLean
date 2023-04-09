@@ -1,4 +1,4 @@
-package leaning.jvmerror;
+package leaning.jdk.jvmerror;
 
 public class CPUSpikeDemo {
     public static void start() {

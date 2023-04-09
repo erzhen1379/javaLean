@@ -1,4 +1,4 @@
-package leaning.jvmtool.arthas;
+package leaning.jdk.arthas;
 
 import java.util.ArrayList;
 import java.util.List;

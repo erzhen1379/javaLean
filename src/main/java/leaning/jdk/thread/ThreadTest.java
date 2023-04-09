@@ -24,11 +24,15 @@ public class ThreadTest extends Thread {
 
         thread1.start();
         thread2.start();
+
         Thread.sleep(1000);
+
         System.out.println("---------测试线程join方法1------------");
         ThreadTest thread3 = new ThreadTest();
         System.out.println(thread3.getState());
         thread3.start();
+        //表示同级别，或者级别更好的才可以抢到
+        Thread.yield();
         System.out.println(thread3.getState());
         for (int i = 0; i < 50; i++) {
             if (i > 10) {

@@ -1,4 +1,4 @@
-package leaning.jvmerror;
+package leaning.jdk.jvmerror;
 
 /**
  * java.lang.OutOfMemoryError: unable to create new native thread
