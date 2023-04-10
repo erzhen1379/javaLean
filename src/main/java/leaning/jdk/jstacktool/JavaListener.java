@@ -145,6 +145,7 @@ public class JavaListener {
      * @param time
      */
     private static void doSomeSimpleWork(double time) {
+        System.out.println(String.valueOf(time));
         // 计算当前时间和开始时间的差值是否小于时间片的比例
         long startTime = System.currentTimeMillis();
         while ((System.currentTimeMillis() - startTime) < time) {

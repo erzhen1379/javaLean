@@ -1,6 +1,8 @@
 package leaning.jdk.thread.SynchronizedDemo;
 
 
+import java.util.Date;
+
 public class SynchronizedObjectLock3 implements Runnable {
     static SynchronizedObjectLock3 instence1 = new SynchronizedObjectLock3();
     static SynchronizedObjectLock3 instence2 = new SynchronizedObjectLock3();
@@ -9,7 +11,7 @@ public class SynchronizedObjectLock3 implements Runnable {
     public void run() {
         // 所有线程需要的锁都是同一把
         synchronized(SynchronizedObjectLock3.class){
-            System.out.println("我是线程" + Thread.currentThread().getName());
+            System.out.println(new Date() + "我是线程" + Thread.currentThread().getName());
             try {
                 Thread.sleep(3000);
             } catch (InterruptedException e) {
