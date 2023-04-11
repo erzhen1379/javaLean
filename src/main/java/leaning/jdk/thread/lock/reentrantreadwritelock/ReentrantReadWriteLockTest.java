@@ -1,4 +1,4 @@
-package leaning.jdk.thread;
+package leaning.jdk.thread.lock.reentrantreadwritelock;
 
 import java.util.Date;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
@@ -73,7 +73,7 @@ public class ReentrantReadWriteLockTest {
 
     public static void main(String[] args) {
         ReentrantReadWriteLockTest lockTest = new ReentrantReadWriteLockTest();
-
+        System.out.println("遵循的原则：读写互斥，写读互斥，写写互斥，读读异步。");
         Thread t1 = new Thread(new Runnable() {
             @Override
             public void run() {
@@ -102,10 +102,12 @@ public class ReentrantReadWriteLockTest {
             }
         }, "t4");
 
-        t1.start();
-        t2.start();
-        t3.start();
-        t4.start();
+        t1.start(); //读数据
+        t2.start();//读数据
+        t3.start();//写数据
+        t4.start();//写数据
     }
+
+
 
 }
