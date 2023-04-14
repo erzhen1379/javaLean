@@ -1,4 +1,4 @@
-package effective.github.ch3;
+package leaning.effective.ch3;
 
 /**
  * public final filed实现singleton

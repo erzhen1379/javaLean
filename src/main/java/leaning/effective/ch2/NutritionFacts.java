@@ -1,4 +1,4 @@
-package effective.github.ch2;
+package leaning.effective.ch2;
 
 /**
  * 遇到对个构造器参数考虑使用构建器

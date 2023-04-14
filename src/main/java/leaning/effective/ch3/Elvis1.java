@@ -1,4 +1,4 @@
-package effective.github.ch3;
+package leaning.effective.ch3;
 
 /**
  * static factory 实现songleton

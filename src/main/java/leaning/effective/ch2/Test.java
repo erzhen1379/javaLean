@@ -1,4 +1,4 @@
-package effective.github.ch2;
+package leaning.effective.ch2;
 
 /**
  * 测试

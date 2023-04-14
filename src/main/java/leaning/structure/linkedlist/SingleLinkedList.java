@@ -237,18 +237,18 @@ public class SingleLinkedList {
             System.out.println("该链表为空");
             return;
         }
-     //创建一个栈，将各个节点压入栈
+        //创建一个栈，将各个节点压入栈
         Stack<HeroNode> stack = new Stack<HeroNode>();
-        HeroNode cur=head.next;
-        while (cur!=null){
+        HeroNode cur = head.next;
+        while (cur != null) {
             //将链表所有节点压入栈
 
             stack.push(cur);
-         //   System.out.println("----"+cur);
-            cur=cur.next;  //cur后移，这样就可以压入下一个节点
+            //   System.out.println("----"+cur);
+            cur = cur.next;  //cur后移，这样就可以压入下一个节点
         }
-        while (stack.size()>0){
-            System.out.println("出栈--》"+stack.pop());
+        while (stack.size() > 0) {
+            System.out.println("出栈--》" + stack.pop());
         }
 
     }
