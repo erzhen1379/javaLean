@@ -7,6 +7,19 @@ public class SingleLinkedListOpt {
         HeroNode hero3 = new HeroNode(3, "吴用", "智多星");
         HeroNode hero4 = new HeroNode(4, "林冲", "豹子头");
         SingleLinkedList singleLinkedList = new SingleLinkedList();
-        singleLinkedList.add();
+        singleLinkedList.add(hero1);
+        singleLinkedList.add(hero2);
+        singleLinkedList.add(hero3);
+        singleLinkedList.add(hero4);
+
+        //遍历链表
+        singleLinkedList.list();
+
+        //根据名字查询别名
+        HeroNode heroNode = singleLinkedList.findNiceName("宋江");
+        System.out.println(heroNode.nickname);
+
+        //修改别名
+        singleLinkedList.updateNickName("name");
     }
 }

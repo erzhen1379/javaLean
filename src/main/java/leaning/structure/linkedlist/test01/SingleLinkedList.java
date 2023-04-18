@@ -7,6 +7,20 @@ public class SingleLinkedList {
      */
     HeroNode head = new HeroNode(0, "", "");
 
+    /**
+     * 遍历链表
+     */
+    public void list() {
+        HeroNode tmpNode = head;
+        while (true) {
+            if (tmpNode.nextNode == null) {
+                break;
+            }
+            tmpNode = tmpNode.nextNode;
+            System.out.println(tmpNode.toString());
+        }
+    }
+
     public void add(HeroNode heroNode) {
         HeroNode tmpNode = head;
         while (true) {
@@ -16,5 +30,32 @@ public class SingleLinkedList {
             tmpNode = tmpNode.nextNode;
         }
         tmpNode.nextNode = heroNode;
+    }
+
+    public HeroNode findNiceName(String name) {
+        HeroNode tmpNode = head;
+        while (true) {
+            if (tmpNode.nextNode == null) {
+                break;
+            }
+            tmpNode = tmpNode.nextNode;
+            if (tmpNode.name.equals(name)) {
+                return tmpNode;
+            }
+        }
+        return null;
+    }
+
+    public void updateNickName(String name) {
+        HeroNode tmpNode = head;
+        while (true) {
+            if (tmpNode.nextNode == null) {
+                break;
+            }
+            tmpNode = tmpNode.nextNode;
+            if (tmpNode.name.equals(name)) {
+                tmpNode.nickname = name;
+            }
+        }
     }
 }
