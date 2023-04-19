@@ -1,4 +1,4 @@
-package leaning.structure.tree.test01;
+package leaning.structure.tree.test;
 
 public class Tree extends AbstractTree {
     Node root;
@@ -17,11 +17,11 @@ public class Tree extends AbstractTree {
     public void preList(Node node) {
         System.out.println(node.toString());
         if (node != null) {
-            if (node.left != null) {
-                preList(node.left);
+            if (node.getLeft() != null) {
+                preList(node.getLeft());
             }
-            if (node.right != null) {
-                preList(node.right);
+            if (node.getRight() != null) {
+                preList(node.getRight());
             }
         }
     }
@@ -36,16 +36,12 @@ public class Tree extends AbstractTree {
         if (node != null) {
             midList(node.left);
             System.out.println(node.toString());
-            midList(node.right);
+            midList(node.getRight());
         }
     }
 
     public void setRoot(Node node) {
         this.root = node;
-    }
-
-    public Node getRoot() {
-        return root;
     }
 
     /**
@@ -57,7 +53,7 @@ public class Tree extends AbstractTree {
         if (node != null) {
             postList(node.left);
             System.out.println(node.toString());
-            postList(node.right);
+            postList(node.getRight());
         }
     }
 
@@ -71,43 +67,14 @@ public class Tree extends AbstractTree {
         while (true) {
             if (currNode != null) {
                 System.out.println(currNode.toString());
-                if (currNode.left == null) {
+                if (currNode.getLeft() == null) {
                     continue;
                 }
-                currNode = currNode.left;
-                if (currNode.left == null) {
+                currNode = currNode.getLeft();
+                if (currNode.getRight() == null) {
                     continue;
                 }
             }
-        }
-    }
-
-    /**
-     * 前序查找
-     *
-     * @param id
-     */
-    @Override
-    public Node preSearchIndex(int id) {
-        if (root != null) {
-            return root.preOrderSearchIndex(id);
-        }
-        return null;
-    }
-
-    public Node midSearchIndex(int id) {
-        if (root != null) {
-            return root.midOrderSearchIndex(id);
-        }
-        return null;
-    }
-
-    public void delNode(int id) {
-        if (root != null) {
-            if (root.id == id) {
-                root = null;
-            }
-            root.delNode(id);
         }
     }
 }
