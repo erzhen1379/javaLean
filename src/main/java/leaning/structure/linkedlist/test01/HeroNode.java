@@ -1,7 +1,7 @@
 package leaning.structure.linkedlist.test01;
 
 /**
- *
+ *实现单链表
  */
 public class HeroNode {
     public int id;
