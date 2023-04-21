@@ -46,15 +46,34 @@ public class SingleLinkedList {
         return null;
     }
 
-    public void updateNickName(String name) {
+    public void updateNickName(int id, String name, String nickName) {
         HeroNode tmpNode = head;
         while (true) {
             if (tmpNode.nextNode == null) {
                 break;
             }
             tmpNode = tmpNode.nextNode;
-            if (tmpNode.name.equals(name)) {
-                tmpNode.nickname = name;
+            if (tmpNode.id == id) {
+                tmpNode.nickname = nickName;
+            }
+        }
+    }
+
+    public void deleteNode(int id) {
+        HeroNode tmpNode = head;
+        boolean flag = false;
+        while (true) {
+            if (tmpNode.nextNode == null) {
+                break;
+            }
+            tmpNode = tmpNode.nextNode;
+            if (tmpNode.id == id) {
+                flag = true;
+                break;
+            }
+            if (flag) {
+                tmpNode.nextNode= tmpNode.nextNode.nextNode;
+
             }
         }
     }

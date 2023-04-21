@@ -11,15 +11,19 @@ public class SingleLinkedListOpt {
         singleLinkedList.add(hero2);
         singleLinkedList.add(hero3);
         singleLinkedList.add(hero4);
-
+        System.out.println("-----------list------------");
         //遍历链表
         singleLinkedList.list();
-
+        System.out.println("----------find------------");
         //根据名字查询别名
         HeroNode heroNode = singleLinkedList.findNiceName("宋江");
         System.out.println(heroNode.nickname);
-
+        System.out.println("--------update-----------");
         //修改别名
-        singleLinkedList.updateNickName("name");
+        singleLinkedList.updateNickName(3, "吴用", "修改吴用智多星别名");
+        singleLinkedList.list();
+        System.out.println("------------delete-----------------");
+        singleLinkedList.deleteNode(3);
+        singleLinkedList.list();
     }
 }

@@ -46,7 +46,7 @@ public class SingleLinkedListTest {
         singleLinkedList.update(newHeroNode);*/
 
         //4.测地删除节点
-        //    singleLinkedList.delete(2);
+           singleLinkedList.delete(2);
 //测试一下 求单链表中有效节点的个数
         System.out.println("有效的节点个数=" + singleLinkedList.getLength(singleLinkedList.getHead()));//2
 
