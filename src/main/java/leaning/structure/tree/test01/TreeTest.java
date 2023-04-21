@@ -37,7 +37,7 @@ public class TreeTest {
         //删除节点
         System.out.println("--------前序遍历-------");
         tree.preList(node1);
-        System.out.println("--------删除节点-------");
+        System.out.println("--------删除节点--------");
         tree.delNode(id);
         tree.preList(node1);
 
