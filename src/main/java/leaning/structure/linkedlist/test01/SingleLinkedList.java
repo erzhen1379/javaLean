@@ -72,8 +72,7 @@ public class SingleLinkedList {
                 break;
             }
             if (flag) {
-                tmpNode.nextNode= tmpNode.nextNode.nextNode;
-
+                tmpNode.nextNode = tmpNode.nextNode.nextNode;
             }
         }
     }

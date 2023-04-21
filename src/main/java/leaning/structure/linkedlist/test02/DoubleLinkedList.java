@@ -46,8 +46,12 @@ public class DoubleLinkedList {
     public void delete(int id) {
         Node2 currNode = head;
         while (true) {
+            if (currNode.next == null) {
+                break;
+            }
+            currNode = currNode.next;
             if (currNode.next.id == id) {
-                currNode = currNode.next.next;
+                currNode.next = currNode.next.next;
                 currNode.pre = currNode.pre.pre;
                 break;
             }
