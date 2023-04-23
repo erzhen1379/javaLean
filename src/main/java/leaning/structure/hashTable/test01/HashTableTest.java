@@ -1,6 +1,6 @@
 package leaning.structure.hashTable.test01;
 
-import leaning.structure.linkedlist.test01.HeroNode;
+
 
 public class HashTableTest {
     public static void main(String[] args) {
