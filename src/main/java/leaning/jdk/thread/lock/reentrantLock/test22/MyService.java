@@ -16,9 +16,9 @@ public class MyService {
         try {
 
 
-            if (lock.tryLock(30, TimeUnit.SECONDS)) {
+            if (lock.tryLock(3, TimeUnit.SECONDS)) {
                 System.out.println(new Date() + " : ThreadName  " + Thread.currentThread().getName() + "  开始获得锁");
-                Thread.sleep(1000);
+                Thread.sleep(10000);
                 System.out.println(new Date() + " : ThreadName  " + Thread.currentThread().getName() + "  结束获得锁");
             } else {
                 System.out.println(new Date() + " : ThreadName  " + Thread.currentThread().getName() + "  没获得锁");
