@@ -1,92 +1,31 @@
 package leaning.structure.test;
 
 /**
- * 合并2个链表
- * 常规方法
+ * 排序算法
  */
 public class Test03 {
     public static void main(String[] args) {
-        Node node11 = new Node(11);
-        Node node12 = new Node(12);
-
-        Linklist linklist1 = new Linklist();
-        linklist1.add(node11);
-        linklist1.add(node12);
-
-        Node node21 = new Node(21);
-        Node node22 = new Node(22);
-
-        Linklist linklist2 = new Linklist();
-        linklist2.add(node21);
-        linklist2.add(node22);
-
-        mergeList(linklist1, linklist2);
-        linklist1.list(linklist1);
-
-    }
-
-    public static Linklist mergeList(Linklist linklist1, Linklist linklist2) {
-        System.out.println("-----合并2个链表,递归方法------------");
-        if (linklist1 == null) {
-            return linklist2;
-        }
-        if (linklist2 == null) {
-            return linklist1;
-        }
-        return linklist1;
+        int[] arr = {9, 4, 5, 1, 6, 2, 4, 2, 0, 3};
+        extracted(arr);
     }
 
     /**
-     * 定义链表
+     * 冒泡排序
+     *
+     * @param arr
      */
-    class Linklist {
-        Node head;
-
-        public Linklist() {
-            head = new Node();
-        }
-
-        public void add(Node node) {
-            if (head == null) {
-                head = node;
-                return;
-            }
-            Node currNode = head;
-            while (true) {
-                if (currNode.next == null) {
-                    currNode.next = node;
-                    break;
+    private static void extracted(int[] arr) {
+        for (int i = 0; i < arr.length - 1; i++) {
+            for (int j = 0; j < arr.length - 1 - i; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int tmp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = tmp;
                 }
-                currNode = currNode.next;
             }
         }
-
-        public void list(Linklist linklist) {
-            Node currNode = linklist.head;
-            while (true) {
-                if (currNode.next == null) {
-                    break;
-
-                }
-                currNode = currNode.next;
-                System.out.println(String.valueOf(currNode.id));
-
-            }
-        }
-    }
-
-    /**
-     * 定义node节点
-     */
-    class Node {
-        int id;
-        Node next;
-
-        public Node(int id) {
-            this.id = id;
-        }
-
-        public Node() {
+        for (int z = 0; z < arr.length; z++) {
+            System.out.print(arr[z] + "\t");
         }
     }
 }
