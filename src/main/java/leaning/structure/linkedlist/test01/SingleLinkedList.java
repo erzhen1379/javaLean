@@ -25,11 +25,12 @@ public class SingleLinkedList {
         HeroNode tmpNode = head;
         while (true) {
             if (tmpNode.nextNode == null) {
+                tmpNode.nextNode = heroNode;
                 break;
             }
             tmpNode = tmpNode.nextNode;
         }
-        tmpNode.nextNode = heroNode;
+
     }
 
     public HeroNode findNiceName(String name) {

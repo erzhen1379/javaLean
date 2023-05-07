@@ -1,9 +1,13 @@
-package leaning.jdk.collection;
+package leaning.jdk.collection.map;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
+/**
+ * 底层：数组+链表
+ * 线程不安全
+ */
 public class HashMapTest {
     public static void main(String[] args) {
         System.out.println("hashMap 学习");
@@ -38,7 +42,11 @@ public class HashMapTest {
         hashMap.forEach((key, value) -> {
             System.out.println("key=" + key + " value=" + value);
         });
-
+        System.out.println("---------34------------");
+        for (Map.Entry entry:hashMap.entrySet()){
+            System.out.println(entry.getKey());
+        }
+        System.out.println("---------34------------");
         System.out.println("----------------测试hashmap线程安全--------------------");
         HashMap<String, String> map = new HashMap<>();
         Thread t1 = new Thread(new Runnable() {
