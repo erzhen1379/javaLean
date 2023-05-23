@@ -30,7 +30,7 @@ public class SocketServerTest {
             long fileLength = dis.readLong();
            // File directory = new File("D:\\file\\work");
 
-            File directory = new File("/root/");
+            File directory = new File("/home/netease/");
             if(!directory.exists()) {
                 directory.mkdir();
             }

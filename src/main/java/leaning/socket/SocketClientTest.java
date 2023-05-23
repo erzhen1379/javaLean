@@ -25,6 +25,7 @@ public class SocketClientTest extends Socket {
         try {
             fis = new FileInputStream(file);
             //BufferedInputStream bi=new BufferedInputStream(new InputStreamReader(new FileInputStream(file),"GBK"));
+         //   client.setSoTimeout(500);
             dos = new DataOutputStream(client.getOutputStream());//client.getOutputStream()返回此套接字的输出流
             //文件名、大小等属性
             dos.writeUTF(file.getName());
@@ -52,7 +53,10 @@ public class SocketClientTest extends Socket {
     public static void main(String[] args) {
         try {
             SocketClientTest client = new SocketClientTest(); // 启动客户端连接
-            client.sendFile("D:\\file\\krb5-libs-1.15.1-50.el7.x86_64.rpm"); // 传输文件
+
+            client.client.setSoTimeout(500);
+            Thread.sleep(50000);
+            client.sendFile("/tmp/hadoop-3.1.1.tar.gz"); // 传输文件
         } catch (Exception e) {
             e.printStackTrace();
         }
