@@ -23,5 +23,9 @@ public class Test01 {
         for (Map.Entry<String, Integer> entry : hashMap.entrySet()) {
             System.out.println(entry.getKey() + ":" + entry.getValue());
         }
+
+        hashMap.forEach((key, value) -> {
+            System.out.println(key + "|" + value);
+        });
     }
 }
