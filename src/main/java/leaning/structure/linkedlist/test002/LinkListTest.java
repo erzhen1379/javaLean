@@ -20,8 +20,8 @@ public class LinkListTest {
         listList.list();
         System.out.println("-----反转-------");
 
-        //   Node preNode = reLinkList(listList);
-        // listList.list(preNode);
+          Node preNode = reLinkList(listList);
+        listList.list(preNode);
         reverseList(listList.head);
     }
 
