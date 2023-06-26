@@ -19,8 +19,24 @@ public class HJ20 {
             Pattern p2 = Pattern.compile("[a-z]");
             Pattern p3 = Pattern.compile("[0-9]");
             Pattern p4 = Pattern.compile("[^a-zA-Z0-9]");
-            if (int i=0;i<chars.length;i++){
-                System.out.println("111");
+            for (int i = 0; i < chars.length; i++) {
+                if (p1.matcher(String.valueOf(chars[i])).find()) {
+                    count++;
+                }
+                if (p2.matcher(String.valueOf(chars[i])).find()) {
+                    count++;
+                }
+                if (p3.matcher(String.valueOf(chars[i])).find()) {
+                    count++;
+                }
+                if (p4.matcher(String.valueOf(chars[i])).find()) {
+                    count++;
+                }
+            }
+            if (count>2){
+                System.out.println("OK");
+            }else {
+                System.out.println("NG");
             }
         }
 
