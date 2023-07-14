@@ -21,6 +21,7 @@ public class HotCode {
             hotmethod1();
             hotmethod2();
             hotmethod3();
+            // hotmethod4();
             allocate();
         }
     }
@@ -41,6 +42,21 @@ public class HotCode {
         UUID uuid = UUID.randomUUID();
         String str = uuid.toString().replace("-", "");
         list.add(str);
+    }
+
+    private static void hotmethod4() {
+        int i = 0;
+        while (true) {
+            i++;
+            try {
+                Thread.sleep(1);
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+            if (i % 1000 == 0) {
+                i = 1;
+            }
+        }
     }
 
     /**
