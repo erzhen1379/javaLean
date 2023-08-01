@@ -5,6 +5,8 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * <p>
@@ -17,6 +19,7 @@ import lombok.extern.slf4j.Slf4j;
 public class Arthas {
 
     private static HashSet hashSet = new HashSet();
+    private static final Logger log= LoggerFactory.getLogger(Arthas.class);
     /** 线程池，大小1*/
     private static ExecutorService executorService = Executors.newFixedThreadPool(1);
 
@@ -62,6 +65,7 @@ public class Arthas {
         Thread thread = new Thread(() -> {
             while (true) {
                 log.info("cpu start 100");
+
             }
         });
         // 添加到线程

@@ -11,7 +11,8 @@ public class Log4jTest {
     public static void main(String[] args) {
 
         final Logger LOGGER = Logger.getLogger(Log4jTest.class);
-        LOGGER.info("普通信息");
+        String str="test";
+        LOGGER.info("普通信息 {}");
         LOGGER.error("普通错误");
         LOGGER.trace("堆栈信息");
         LOGGER.fatal("致命错误");
