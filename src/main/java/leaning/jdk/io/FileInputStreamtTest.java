@@ -23,6 +23,7 @@ public class FileInputStreamtTest {
             int read;
             System.out.println("----------------------------");
             //4.从输入流中读取一些字节数，并将他们存到缓冲区
+            //todo 要等于read
             while ((read = fileInputStream.read(bytes)) != -1) {
                 System.out.println(new String(bytes, 0, read));
             }
