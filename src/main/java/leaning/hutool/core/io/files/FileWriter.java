@@ -5,6 +5,8 @@ import leaning.hutool.core.io.IORuntimeException;
 
 import java.io.*;
 import java.nio.charset.Charset;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 文件写入器
@@ -53,20 +55,80 @@ public class FileWriter extends FileWrapper {
     public File write(String content, boolean isAppend) {
         BufferedWriter writer;
         try {
-            writer = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, isAppend), charset));
+            writer = getWrite(isAppend);
             writer.write(content);
             writer.flush();
         } catch (IOException e) {
             //todo
             throw new IORuntimeException(e);
-        } finally {
-            writer=null;
         }
         return file;
     }
 
+    /**
+     * 将内容追加写入
+     *
+     * @param content
+     * @return
+     */
+    public File append(String content) {
+        return write(content, true);
+    }
+
+    /**
+     * 获得一个带缓存的写入对象
+     *
+     * @param isAppend
+     * @return
+     */
+    public BufferedWriter getWrite(boolean isAppend) throws FileNotFoundException {
+        return new BufferedWriter(new OutputStreamWriter(new FileOutputStream(file, isAppend), charset));
+    }
+
+    /**
+     * 将列表写入文件
+     *
+     * @param <T>           集合元素类型
+     * @param list          列表
+     * @param lineSeparator 换行符枚举（Windows、Mac或Linux换行符）
+     * @param isAppend      是否追加
+     * @return 目标文件
+     * @throws IORuntimeException IO异常
+     * @since 3.1.0
+     */
+    public <T> File writeLines(Iterable<T> list, LineSeparator lineSeparator, boolean isAppend) throws IORuntimeException {
+      /*  try (PrintWriter writer = getPrintWriter(isAppend)) {
+            boolean isFirst = true;
+            for (T t : list) {
+                if (null != t) {
+                    if (isFirst) {
+                        isFirst = false;
+                        if (isAppend && FileUtil.isNotEmpty(this.file)) {
+                            // 追加模式下且文件非空，补充换行符
+                            printNewLine(writer, lineSeparator);
+                        }
+                    } else {
+                        printNewLine(writer, lineSeparator);
+                    }
+                    writer.print(t);
+
+                    writer.flush();
+                }
+            }
+        }*/
+        return this.file;
+    }
+
+
     public static void main(String[] args) {
         FileWriter fileWriter = new FileWriter(new File("./demo/a.log"));
-        fileWriter.write("java");
+        fileWriter.write("java", false);
+
+        List<String> list = new ArrayList<>();
+        list.add("zhangsan");
+        list.add("lisi");
+        list.add("wangwu");
+        fileWriter.writeLines(list,LineSeparator.WINDOWS,false);
+
     }
 }

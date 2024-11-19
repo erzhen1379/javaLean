@@ -5,8 +5,8 @@ import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 
 public class FileWrapper {
-    protected File file;
-    protected Charset charset;
+    public File file;
+    public Charset charset;
 
     //StandardCharsets  设置编码
     public static final Charset DEFAULT_CHARSET = StandardCharsets.UTF_8;
