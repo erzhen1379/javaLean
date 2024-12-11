@@ -31,6 +31,10 @@ public class HJ01 {
         int length = s[s.length - 1].length();
         System.out.println(s[s.length - 1] + " 长度 :" + length);
 
+
+
+
+
     }
 
 

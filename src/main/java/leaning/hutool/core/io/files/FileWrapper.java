@@ -16,4 +16,8 @@ public class FileWrapper {
         this.file = file;
         this.charset = charset;
     }
+
+    public void printLog() {
+        System.out.println("parent");
+    }
 }

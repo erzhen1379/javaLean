@@ -8,7 +8,7 @@ import java.nio.charset.Charset;
 
 public class IoUtil {
 
-    public static BufferedReader getReader(InputStream in, Charset charset) {
+/*    public static BufferedReader getReader(InputStream in, Charset charset) {
         if (null == inputStream) {
             return null;
         }
@@ -19,5 +19,5 @@ public class IoUtil {
             reader=new InputStreamReader(in, charset);
         }
 
-    }
+    }*/
 }

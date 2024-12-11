@@ -8,7 +8,7 @@ import java.util.Map;
  */
 public class Test01 {
     public static void main(String[] args) {
-        String[] arr = {"a", "b", "c", "a", "d", "b", "f", "d"};
+       /* String[] arr = {"a", "b", "c", "a", "d", "b", "f", "d"};
 
         System.out.println("----------通过集合-------------");
         HashMap<String, Integer> hashMap = new HashMap<String, Integer>();
@@ -26,6 +26,25 @@ public class Test01 {
 
         hashMap.forEach((key, value) -> {
             System.out.println(key + "|" + value);
+        });*/
+        wordcount();
+    }
+
+    public static void wordcount() {
+        String[] arr = {"a", "b", "c", "a", "d", "b", "f", "d","a"};
+        Map<String, Integer> map = new HashMap<>();
+        for (int i = 0; i < arr.length; i++) {
+            Integer count = map.get(arr[i]);
+            if (map.containsKey(arr[i])){
+                map.put(arr[i],count+1);
+            }else{
+                map.put(arr[i],1);
+            }
+        }
+        map.forEach((key,value) ->{
+            System.out.println(key+value);
         });
+
+
     }
 }

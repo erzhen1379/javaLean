@@ -119,6 +119,12 @@ public class FileWriter extends FileWrapper {
         return this.file;
     }
 
+    @Override
+    public void printLog() {
+        System.out.println("child");
+        super.printLog();
+
+    }
 
     public static void main(String[] args) {
         FileWriter fileWriter = new FileWriter(new File("./demo/a.log"));
@@ -128,7 +134,8 @@ public class FileWriter extends FileWrapper {
         list.add("zhangsan");
         list.add("lisi");
         list.add("wangwu");
-        fileWriter.writeLines(list,LineSeparator.WINDOWS,false);
+        fileWriter.writeLines(list, LineSeparator.WINDOWS, false);
+        fileWriter.printLog();
 
     }
 }

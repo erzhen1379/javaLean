@@ -10,8 +10,6 @@ public class Test01 {
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(str.length() - i-1);
             System.out.println(c);
-
-
         }
     }
 }

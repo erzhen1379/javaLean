@@ -47,4 +47,13 @@ public class HJ03 {
             System.out.println(iterator.next());
         }
     }
+    public  void mer(){
+        Integer[] in={1,4,2,4,2};
+
+        for (int i=0;i<in.length-1;i++){
+            for(int j=i;j<in.length;j++){
+
+            }
+        }
+    }
 }
